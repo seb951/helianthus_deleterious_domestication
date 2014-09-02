@@ -1,0 +1,32 @@
+###This is a readme file that list what all the scripts do and in what order they should be used
+
+alignments_stats.R
+
+
+#aligning reads
+bwa.R
+
+#calling snps with samtools mpileup
+samtools_mpileup.R
+
+#cleaning up and parsing the snps.
+samtools_mpileup_aftermpileup.R
+snp_parser.R
+
+#are the non-synynomus snps deleterious. there are 2 alternative versions (d and w) depending on the reference.
+provean.R
+dprovean.R
+wprovean.R
+
+#parsing the provean results
+provean_afterprovean.R
+
+#are snps syn. non-syn. non-coding?
+syn_nonsyn_vII.R
+
+#plotting results
+plotting.R
+table_S1.R
+
+#extra not used
+complementation_heterotic_groups.R
