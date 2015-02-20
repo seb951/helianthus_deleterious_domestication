@@ -1,1 +1,45 @@
-../Rcode_MBE/README
+###This is a readme file that list what all the scripts do and in what order they should be used
+
+
+#aligning reads
+#align with bwa
+#generate sam/bam files. index files with samtools
+#filter out bad reads and do local realignments with gatk.
+bwa.R
+
+#calling snps with samtools mpileup
+samtools_mpileup.R
+
+#cleaning up and parsing the snps.
+samtools_mpileup_aftermpileup.R
+snp_parser.R
+
+#are the non-synynomus snps deleterious. there are 2 alternative versions (d and w) depending on the reference (domesticated only or wild only)
+#See methods in the paper for more info. but essentially, you should not use dprovean.R and wprovean.R, they might not be up-to-date.
+provean_sift.R # this also runs SIFT
+dprovean.R
+wprovean.R
+
+#parsing the provean/sift results
+provean_afterprovean.R
+provean)aftersift.R
+
+#are snps syn. non-syn. non-coding?
+syn_nonsyn_vII.R
+
+#calculate nucleotide diversity using SITES from Jody Hey's lab
+pi.R
+
+#redo figure 1, but with different missing data thresholds.
+missingdata_check_alignments_fractions.R
+
+#find out the effect of recombination rate
+recomrate.R
+
+#plotting all the Figures, unless a figure is specified in another script
+plotting.R
+
+#generate table S1 and some other alignment stats...
+table_S1.R
+
+
