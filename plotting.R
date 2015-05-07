@@ -81,7 +81,7 @@ barplot(t(stacks[,1:2]), space = 0, add = T, col = c("#FFFFFFFF","#FFFFFF99"), y
 mtext(side = 1, at = seq(0.5,40,by = 1),line = 1, text = type[order(as.numeric(results_ns_s[,2]))], font = 3, las = 3,cex = 0.3)
 mtext(side = 2, at = max(as.numeric(results_ns_s[,2])) / 2,  text = "Number of sites (x 1,000)", font = 1, line = 2.8, cex = 1)
 mtext(side = 1, at = 20.5, text = expression(italic(H.~annuus)~~accessions), font = 1, line = 3, cex = 1)
-text(x = -12, y = 300000,  "A", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",xpd = T)
+text(x = -12, y = 250000,  "A", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",xpd = T)
 axis(side = 2, at = seq(0,250000,by = 50000), labels = c(0,"50","100","150","200","250"), las = 1,font = 2,crt = 90)
 text(x = 41.5, y = 25000,  "Non-syno\nnymous", font = 1,  cex = 0.8, adj = 0,srt = 45,col = "black",xpd = T)
 text(x = 41.5, y = 100000,   "Synony-\nmous", font = 1, cex = 0.8, adj = 0,srt = 45,col = "black",xpd = T)
@@ -179,7 +179,7 @@ par(mfrow = c(2,2))
 sn_sub = sn[sn[,3] != 0,] #make sure they are present in the population you are looking at...
 x = hist(sn_sub[sn_sub[,2] > -2.5,3],breaks = seq(0,1,by = 0.01), plot = F)
 x1 = hist(sn_sub[sn_sub[,2] < -2.5 ,3],breaks = seq(0,1,by = 0.01), plot = F)
-plot(x1$mids+0.00,x1$density, col = "red", lwd = 4, type = "h",xlab = "Derived Allele Frequency", ylim = c(0,15),ylab = "Density",main = "Wild") # ns, non deleterious, freq in wild
+plot(x1$mids+0.00,x1$density, col = "red", lwd = 4, type = "h",xlab = "Folded Site Frequency Spectrum\n (Minor Allele Frequency)", ylim = c(0,15),ylab = "Density",main = "Wild") # ns, non deleterious, freq in wild
 points(x$mids+0.01,x$density,  lwd = 4, type = "h",col = "#000000FF")
 legend(x = 0.4, 15, cex = 1, legend = c(expression(italic(P)[n~(neutral)]), expression(italic(P)[n~(deleterious)])), fill = c("black","red"), bty = "o", bg = "#FFFFFF80")
 ks.test(sn_sub[sn_sub[,2] > -2.5,3],sn_sub[sn_sub[,2] < -2.5,3])
@@ -188,7 +188,7 @@ text(x = -0.1, y = 17.6,  "A", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black
 sn_sub = sn[sn[,6] != 0,] #make sure they are present in the population you are looking at...
 x = hist(sn_sub[sn_sub[,2] < -2.5,6],breaks = seq(0,1,by = 0.01), plot = F)
 y = hist(sn_sub[sn_sub[,2] > -2.5,6],breaks = seq(0,1,by = 0.01), plot = F)
-plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,40), xlab = "Derived Allele Frequency",ylab = "Density",main = "Weed") # ns, non deleterious, freq in wild
+plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,40), xlab = "Folded Site Frequency Spectrum\n (Minor Allele Frequency)",ylab = "Density",main = "Weed") # ns, non deleterious, freq in wild
 points(y$mids+0.02,y$density, col = "#000000FF", lwd = 4, type = "h")
 ks.test(sn_sub[sn_sub[,2] > -2.5,6],sn_sub[sn_sub[,2] < -2.5,6])
 text(x = -0.1, y = 46,  "B", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",xpd = T)
@@ -196,7 +196,7 @@ text(x = -0.1, y = 46,  "B", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",
 sn_sub = sn[sn[,4] != 0,] #make sure they are present in the population you are looking at...
 x = hist(sn_sub[sn_sub[,2] < -2.5,4],breaks = seq(0,1,by = 0.01), plot = F)
 y = hist(sn_sub[sn_sub[,2] > -2.5,4],breaks = seq(0,1,by = 0.01), plot = F)
-plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,33), xlab = "Derived Allele Frequency", ylab = "Density",main = "Landrace") # ns, non deleterious, freq in wild
+plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,33), xlab = "Folded Site Frequency Spectrum\n (Minor Allele Frequency)", ylab = "Density",main = "Landrace") # ns, non deleterious, freq in wild
 points(y$mids+0.02,y$density, col = "#000000FF", lwd = 4, type = "h")
 ks.test(sn_sub[sn_sub[,2] > -2.5,4],sn_sub[sn_sub[,2] < -2.5,4])
 text(x = -0.1, y = 38,  "C", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",xpd = T)
@@ -204,7 +204,7 @@ text(x = -0.1, y = 38,  "C", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",
 sn_sub = sn[sn[,5] != 0,] #make sure they are present in the population you are looking at...
 x = hist(sn_sub[sn_sub[,2] < -2.5,5],breaks = seq(0,1,by = 0.01), plot = F)
 y = hist(sn_sub[sn_sub[,2] > -2.5,5],breaks = seq(0,1,by = 0.01), plot = F)
-plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,15),xlab = "Derived Allele Frequency", ylab = "Density",main = "Elite") # ns, non deleterious, freq in wild
+plot(x$mids,x$density, col = "red", lwd = 4, type = "h",ylim = c(0,15),xlab = "Folded Site Frequency Spectrum\n (Minor Allele Frequency)", ylab = "Density",main = "Elite") # ns, non deleterious, freq in wild
 points(y$mids+0.02,y$density, col = "#000000FF", lwd = 4, type = "h")
 ks.test(sn_sub[sn_sub[,2] > -2.5,5],sn_sub[sn_sub[,2] < -2.5,5])
 text(x = -0.1, y = 17.5,  "D", font = 1, cex = 1.8, adj = 0,srt = 0,col = "black",xpd = T)
