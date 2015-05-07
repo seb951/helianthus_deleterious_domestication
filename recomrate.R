@@ -90,9 +90,9 @@ unique_map_transcript_delmutations = read.table("results/new_unique_map_transcri
 c = 10
 lg_x = unique_map_transcript_delmutations[unique_map_transcript_delmutations[,2] == c,]
 #lg_x = unique_map_transcript_delmutations
-par(mar = c(5,5,4,6))
+par(mar = c(5,5,2,6))
 
-plot(lg_x[lg_x[,12] > 0.05,3],log(lg_x[lg_x[,12] > 0.05,11],10),type = "p", pch = 19, col = "#00990070",ylim = c(-5,2.5),xlim = c(0,90),xaxt = "n",yaxt = "n",xlab = "",main = "Linkage Group 10",ylab = "")
+plot(lg_x[lg_x[,12] > 0.05,3],log(lg_x[lg_x[,12] > 0.05,11],10),type = "p", pch = 19, col = "#00990070",ylim = c(-5,2.5),xlim = c(0,90),xaxt = "n",yaxt = "n",xlab = "",ylab = "") #,main = "Linkage Group (chromosome) 10"
 #plot(lg_x[,3],(lg_x[,10]),type = "p", pch = 19, col = "#00990099",ylim = c(-5,2.5),xlim = c(0,90),xaxt = "n",yaxt = "n",xlab = "",ylab = "")
 lines(lg_x[,3],log(lg_x[,6],10),type = "l",col = "black", lwd = 2,ylim = c(-5,2.5),xlim = c(0,100))
 points(lg_x[lg_x[,12]<=0.05,3],ifelse(log(lg_x[lg_x[,12]<=0.05,11],10) == -Inf,-5,log(lg_x[lg_x[,12]<=0.05,11],10)),type = "p", pch = 17, col = 
@@ -101,7 +101,7 @@ axis(side = 2, at = c(-3,-2,-1,0,1,2), labels = c(0.001,0.01,0.1,1,10,100),las =
 mtext(side = 2, "Recombination rate (cM / MB)",col = "black",line = 3.3,lwd = 2)
 
 axis(side = 1,  at = c(0,10,20,30,40,50,60,70,80,90), labels = c(0,10,20,30,40,50,60,70,80,90),col = "black") #bottom 
-mtext(side = 1, "Distance (cM)",col = "black",line = 3)
+mtext(side = 1, "Genetic distance (cM)",col = "black",line = 3)
 
 axis(side = 4,at = c(-5,-4,-3,-2,-1,0), labels = c(0.00001,0.0001,0.001,0.01,0.1,1),las = 1,col.lab = "#009900",col.axis = "#009900") #right 
 mtext(side = 4,expression(bolditalic(p)~bold(-value)~(~over(bolditalic(P)[bold(n~(deleterious))],~bolditalic(P)[bold(n~(neutral))]))),col = "#009900",line = 4.9,at = -3)
